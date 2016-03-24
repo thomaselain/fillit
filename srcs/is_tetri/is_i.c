@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   next_pos.c                                         :+:      :+:    :+:   */
+/*   is_i.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/20 16:46:47 by telain            #+#    #+#             */
-/*   Updated: 2016/02/04 17:32:25 by telain           ###   ########.fr       */
+/*   Created: 2016/01/09 15:26:56 by telain            #+#    #+#             */
+/*   Updated: 2016/01/09 17:40:34 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../../includes/fillit.h"
 
-int		next_pos(t_tetris tetri, int **square, int pos, int size)
+int		is_i_0(t_tetris *t)
 {
-	int		i;
-	int		j;
+	if (t->coord[1] == t->coord[0] + 5
+			&& t->coord[2] == t->coord[0] + 10
+			&& t->coord[3] == t->coord[0] + 15)
+		return (1);
+	else
+		return (0);
+}
 
-	i = pos / 26;
-	j = pos % 26;
-	square = rem_tetri(tetri, square);
-	while (i < size)
-	{
-		while (++j < size)
-		{
-			if (can_put(tetri, square, (i * 26 + j), size) == 1)
-			{
-				return (i * 26 + j);
-			}
-		}
-		j = -1;
-		i++;
-	}
-	return (-1);
+int		is_i_90(t_tetris *t)
+{
+	if (t->coord[1] == t->coord[0] + 1
+			&& t->coord[2] == t->coord[0] + 2
+			&& t->coord[3] == t->coord[0] + 3)
+		return (1);
+	else
+		return (0);
 }

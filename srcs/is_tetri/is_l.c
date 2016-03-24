@@ -10,43 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../../includes/fillit.h"
 
-int		is_l_0(t_tetris *tetri)
+int		is_l_0(t_tetris *t)
 {
-	if (tetri->coord[1] == tetri->coord[0] + 5
-			&& tetri->coord[2] == tetri->coord[0] + 10
-			&& tetri->coord[3] == tetri->coord[0] + 11)
+	if (t->coord[1] == t->coord[0] + 5
+			&& t->coord[2] == t->coord[0] + 10
+			&& t->coord[3] == t->coord[0] + 11)
 		return (1);
 	else
 		return (0);
 }
 
-int		is_l_90(t_tetris *tetri)
+int		is_l_90(t_tetris *t)
 {
-	if (tetri->coord[1] == tetri->coord[0] + 1
-			&& tetri->coord[2] == tetri->coord[0] + 2
-			&& tetri->coord[3] == tetri->coord[0] + 5)
+	if (t->coord[1] == t->coord[0] + 1
+			&& t->coord[2] == t->coord[0] + 2
+			&& t->coord[3] == t->coord[0] + 5)
 		return (1);
 	else
 		return (0);
 }
 
-int		is_l_180(t_tetris *tetri)
+int		is_l_180(t_tetris *t)
 {
-	if (tetri->coord[1] == tetri->coord[0] + 1
-			&& tetri->coord[2] == tetri->coord[0] + 6
-			&& tetri->coord[3] == tetri->coord[0] + 11)
+	if (t->coord[1] == t->coord[0] + 1
+			&& t->coord[2] == t->coord[0] + 6
+			&& t->coord[3] == t->coord[0] + 11)
 		return (1);
 	else
 		return (0);
 }
 
-int		is_l_270(t_tetris *tetri)
+int		is_l_270(t_tetris *t)
 {
-	if (tetri->coord[1] == tetri->coord[0] + 3
-			&& tetri->coord[2] == tetri->coord[0] + 4
-			&& tetri->coord[3] == tetri->coord[0] + 5)
+	if (t->coord[1] == t->coord[0] + 3
+			&& t->coord[2] == t->coord[0] + 4
+			&& t->coord[3] == t->coord[0] + 5)
 		return (1);
 	else
 		return (0);

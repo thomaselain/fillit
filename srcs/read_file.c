@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_o.c                                             :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: telain <telain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 15:38:52 by telain            #+#    #+#             */
-/*   Updated: 2016/01/09 17:45:10 by telain           ###   ########.fr       */
+/*   Created: 2016/03/11 18:17:45 by telain            #+#    #+#             */
+/*   Updated: 2016/03/11 21:08:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
-int		is_o_0(t_tetris *tetri)
+void	read_file(t_env *e)
 {
-	if (tetri->coord[1] == tetri->coord[0] + 1
-			&& tetri->coord[2] == tetri->coord[0] + 5
-			&& tetri->coord[3] == tetri->coord[0] + 6)
-		return (1);
-	else
-		return (0);
+	int		fd;
+	char	text[22];
+	int		ret;
+
+	fd = open(e->file, O_RDONLY, S_IREAD);
+	while ((ret = read(fd, text, 1) > 0))
+	{
+		text[ret] = '\0';
+		e->buf = ft_strjoin(e->buf, text);
+	}
+	close(fd);
 }

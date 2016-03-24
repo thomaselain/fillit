@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_s.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 14:39:12 by telain            #+#    #+#             */
-/*   Updated: 2016/02/06 19:25:05 by cchicote         ###   ########.fr       */
+/*   Created: 2016/01/09 15:42:13 by telain            #+#    #+#             */
+/*   Updated: 2016/01/09 17:45:30 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../../includes/fillit.h"
 
-void	put_error(int error)
+int		is_s_0(t_tetris *t)
 {
-	ft_putstr("error\n");
-	error = 1;
-}
-
-void	no_error(void)
-{
-	ft_putstr("\033[0;32m");
-	ft_putendl("Fin.");
-}
-
-int		main(int ac, char **av)
-{
-	int		error;
-
-	error = 0;
-	if (ac != 2)
+	if (t->coord[1] == t->coord[0] + 1
+			&& t->coord[2] == t->coord[0] + 4
+			&& t->coord[3] == t->coord[0] + 5)
+		return (1);
+	else
 		return (0);
-	error = start(av[1]);
-	(error < 0) ? put_error(error) : error;
-	return (0);
+}
+
+int		is_s_90(t_tetris *t)
+{
+	if (t->coord[1] == t->coord[0] + 5
+			&& t->coord[2] == t->coord[0] + 6
+			&& t->coord[3] == t->coord[0] + 11)
+		return (1);
+	else
+		return (0);
 }
