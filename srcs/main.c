@@ -6,7 +6,7 @@
 /*   By: cchicote <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 17:46:28 by cchicote          #+#    #+#             */
-/*   Updated: 2016/03/24 15:46:19 by telain           ###   ########.fr       */
+/*   Updated: 2016/03/25 15:32:07 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			main(int argc, char **argv)
 	i = -1;
 	if (argc != 2)
 	{
-		ft_putendl("usage : './fillit fichier'.");
+		ft_putendl("Usage : ./fillit <filename>");
 		return (0);
 	}
 	e = new_env(e);
